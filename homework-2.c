@@ -4,14 +4,17 @@ void hollow_square(int size) {
     int i, j;
     for(i=0; i<size; i++) {
         for (j=0; j<size; j++) {
-            if (i == 0 || i == size-1) { // print vertical line
+            int isLeftCol = i == 0;
+            int isRightCol = i == size-1;
+            int isTopRow = j == 0;
+            int isBottomRow = j == size-1;
+            if (isLeftCol || isRightCol) { // print vertical line
                 printf("*");
-            } else if (j == 0 || j == size-1) { // print horizontal line ----
+            } else if (isTopRow || isBottomRow) { // print horizontal line ----
                 printf("*");
             } else {
                 printf(" ");
             }
-            
         }
         printf("\n");
     }
@@ -21,15 +24,14 @@ void top_pyramid(int height, int marginLeft) {
     int i, j;
     printf("height: %d\n\n", height); 
     for (i = 0; i<height; i++) {
-        
+        // padded margin - for diamond
         for(j=0; j<marginLeft;j++) {
             printf(" ");
         }
-
+        
         for (j=height-1; j>i; j--) {
             printf(" ");
         }
-        
         for (j=0;j<=(2*i);j++) {
             printf("X");
         }
