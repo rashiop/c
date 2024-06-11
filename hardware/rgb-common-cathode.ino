@@ -1,5 +1,5 @@
 // led -- 2 terminal
-// anode +ve, cathode - volantile
+// anode +ve, cathode - volatile
 // led1 - R,G,B
 
 // Note:
